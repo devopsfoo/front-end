@@ -23,7 +23,8 @@ pipeline {
       }
       steps {
         echo 'this is the test job'
-        sh 'npm test'
+        sh '''npm install
+npm test'''
       }
     }
 
@@ -35,7 +36,8 @@ pipeline {
 
       }
       steps {
-        sh 'npm run package'
+        sh '''npm install
+npm run package'''
         archiveArtifacts '**/distribution/*.zip'
       }
     }
